@@ -1,14 +1,15 @@
-import 'reflect-metadata';
-import {inject, injectable} from 'inversify';
-import {LoggerInterface} from '../src/common/logger/logger.interface.js';
-import {ConfigInterface} from '../src/common/config/config.interface.js';
-import {Component} from '../src/types/component.type.js';
+import { inject, injectable } from 'inversify';
+import { ConfigInterface } from '../src/common/config/config.interface.js';
+import { LoggerInterface } from '../src/common/logger/logger.interface.js';
+import { Component } from '../src/types/component.type.js';
 
 @injectable()
 export default class Application {
+
   constructor(
     @inject(Component.LoggerInterface) private logger: LoggerInterface,
-    @inject(Component.ConfigInterface) private config: ConfigInterface) {}
+    @inject(Component.ConfigInterface) private config: ConfigInterface
+  ) {}
 
   public async init() {
     this.logger.info('Application initialization...');

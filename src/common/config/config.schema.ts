@@ -27,5 +27,5 @@ export const configSchema = convict<ConfigSchema>({
     format: 'ipaddress',
     env: 'DB_HOST',
     default: '127.0.0.1'
-  }
+  },
 });

@@ -51,40 +51,40 @@
       "10"
     ],
     "moviePrewiewLink": [
-      "Aviator_preview.mp4",
-      "The-grand-budapest-hotel_preview.mp4",
-      "Bohemian-rhapsody_preview.mp4",
-      "FantasticBeastsTheCrimesofGrindelwald_preview.mp4",
-      "Dardjeeling-limited_preview.mp4",
-      "Johnny-english_preview.mp4",
-      "Revenant_preview.mp4"
+      "https://www.youtube.com/watch?v=FebPJlmgldE",
+      "https://www.youtube.com/watch?v=zru-1DbbcsA",
+      "https://www.youtube.com/watch?v=mP0VHJYFOAU",
+      "https://www.youtube.com/watch?v=vvFybpmyB9E",
+      "https://www.youtube.com/watch?v=aO1bYukdvLI",
+      "https://www.youtube.com/watch?v=EG0MR5dFz7E",
+      "https://www.youtube.com/watch?v=LoebZZ8K5N0"
     ],
     "movieVideoLink": [
-      "Aviator.mp4",
-      "The-grand-budapest-hotel.mp4",
-      "Bohemian-rhapsody.mp4",
-      "FantasticBeastsTheCrimesofGrindelwald.mp4",
-      "Dardjeeling-limited.mp4",
-      "Johnny-english.mp4",
-      "Revenant.mp4"
+      "https://www.youtube.com/watch?v=xWU-IVcPqHk",
+      "https://www.youtube.com/watch?v=OWDxJj092ac",
+      "https://www.youtube.com/watch?v=-HFPG2z5gVE",
+      "https://www.youtube.com/watch?v=61GUTb11r_4",
+      "https://www.youtube.com/watch?v=_6aisilZMhQ",
+      "https://www.youtube.com/watch?v=REodd03pdkQ",
+      "https://www.youtube.com/watch?v=UZB1ea6nIc0"
     ],
     "actors": [
-      "Actors1",
-      "Actors2",
-      "Actors3",
-      "Actors4",
-      "Actors5",
-      "Actors6",
-      "Actors7"
+      "Leonardo DiCaprio, Cate Blanchett, Kate Beckinsale, John C. Reilly, Alec Baldwin, Alan Alda, Jude Law",
+      "Ralph Fiennes, F. Murray Abraham, Mathieu Amalric, Adrien Brody, Willem Dafoe, Jeff Goldblum, Harvey Keitel, Jude Law, Bill Murray, Edward Norton, Saoirse Ronan, Jason Schwartzman, Léa Seydoux, Tilda Swinton, Tom Wilkinson, Owen Wilson, Tony Revolori",
+      "Rami Malek, Lucy Boynton, Gwilym Lee, Ben Hardy, Joe Mazzello, Aidan Gillen, Tom Hollander, Mike Myers",
+      "Eddie Redmayne, Katherine Waterston, Dan Fogler, Alison Sudol, Ezra Miller, Zoë Kravitz, Callum Turner, Claudia Kim, Jude Law, Johnny Depp",
+      "Owen Wilson, Adrien Brody, Jason Schwartzman, Anjelica Huston",
+      "Rowan Atkinson, Natalie Imbruglia, Ben Miller, John Malkovich",
+      "Leonardo DiCaprio, Tom Hardy, Domhnall Gleeson, Will Poulter"
     ],
-    "producers": [
-      "Producer1",
-      "Producer2",
-      "Producer3",
-      "Producer4",
-      "Producer5",
-      "Producer6",
-      "Producer7"
+    "director": [
+      "Martin Scorsese",
+      "Wes Anderson",
+      "Bryan Singer",
+      "David Yates",
+      "Wes Anderson",
+      "Peter Howitt",
+      "Alejandro G. Iñárritu"
     ],
     "duration": [
       163,
@@ -96,13 +96,13 @@
       156
     ],
     "poster": [
-      "aviator.jpg",
-      "the-grand-budapest-hotel-poster.jpg",
-      "bohemian-rhapsody.jpg",
-      "fantastic-beasts-the-crimes-of-grindelwald.jpg",
-      "dardjeeling-limited.jpg",
-      "johnny-english.jpg",
-      "revenant.jpg"
+      "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/10fcbd4a-43ee-4ae0-a564-5558574185d8/3840x",
+      "https://cdna.artstation.com/p/assets/images/images/019/199/698/large/harsh-borah-810d617qzdl-sl1500-2000x.jpg?1562460759",
+      "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/e975c93d0f601d4f43fa2881ce34f953c4b738f8c33c8d150b47c983c44fa233._RI_V_TTW_.jpg",
+      "https://i.pinimg.com/originals/2b/ca/04/2bca04d487182be4a82c330607d0dc9c.jpg",
+      "https://i.pinimg.com/originals/b4/2b/af/b42baf221d1683287566857303faa68c.jpg",
+      "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/d7a1a960-ad6a-4a06-9586-18c14e469f48/3840x",
+      "https://images6.fanpop.com/image/photos/39700000/The-Revenant-movies-39702149-1523-1759.jpg"
     ],
     "userName": [
       "Петров Петр",
@@ -119,18 +119,18 @@
       "mail4@mail.ru"
     ],
     "avatar": [
-      "avatar.jpg",
-      "avatar1.jpg",
-      "avatar2.jpg",
-      "avatar3.jpg",
-      "avatar4.jpg"
+      "https://avatarko.ru/kartinka/8126",
+      "https://avatarko.ru/kartinka/33779",
+      "https://avatarko.ru/kartinka/8759",
+      "https://avatarko.ru/kartinka/15289",
+      "https://avatarko.ru/kartinka/1342"
     ],
     "backgroundImage": [
-      "backgroundImage.jpg",
-      "backgroundImage1.jpg",
-      "backgroundImage2.jpg",
-      "backgroundImage3.jpg",
-      "backgroundImage4.jpg"
+      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
+      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
+      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
+      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
+      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp"
     ],
     "backgroundColor": [
       "0054d1",

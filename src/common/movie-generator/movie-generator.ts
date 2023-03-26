@@ -25,25 +25,25 @@ export default class MovieGenerator implements MovieGeneratorInterface {
   constructor(private readonly mockData: mockData) { }
 
   public generate(): string {
-    const titleMovie = getRandomItem<string>(this.mockData.titleMovie);
-    const description = getRandomItem<string>(this.mockData.description);
+    const titleMovie = getRandomItem<string>(this.mockData.titlesMovie);
+    const description = getRandomItem<string>(this.mockData.descriptions);
     const publicationDate = dayjs().subtract(generateRandomValue(FIRST_WEEK_DAY, LAST_WEEK_DAY), 'day').toISOString();
     const genreMovie = getRandomItems<string>(Object.values(genreMovies)).join('; ');
     const releaseYear = generateRandomValue(MIN_RELEASE_YEAR, MAX_RELEASE_YEAR);
     const rating = generateRandomValue(MIN_RATING, MAX_RATING, NUM_AFTER_DIGIT);
-    const moviePreviewLink = getRandomItem<string>(this.mockData.moviePreviewLink);
-    const movieVideoLink = getRandomItem<string>(this.mockData.movieVideoLink);
+    const moviePreviewLink = getRandomItem<string>(this.mockData.moviePreviewsLink);
+    const movieVideoLink = getRandomItem<string>(this.mockData.movieVideosLink);
     const actors = getRandomItems<string>(this.mockData.actors).join(', ');
-    const producers = getRandomItem<string>(this.mockData.producers);
+    const directors = getRandomItem<string>(this.mockData.directors);
     const duration = generateRandomValue(MIN_DURATION, MAX_DURATION);
     const commentsCount = generateRandomValue(MIN_COMMENTS, MAX_COMMENTS);
-    const userName = getRandomItem<string>(this.mockData.userName);
-    const email = getRandomItem<string>(this.mockData.email);
-    const avatar = getRandomItem<string>(this.mockData.avatar);
+    const userName = getRandomItem<string>(this.mockData.usersName);
+    const email = getRandomItem<string>(this.mockData.emails);
+    const avatar = getRandomItem<string>(this.mockData.avatars);
     const password = generateRandomPassword();
-    const poster = getRandomItem<string>(this.mockData.poster);
-    const backgroundColor = getRandomItem<string>(this.mockData.backgroundColor);
-    const backgroundImage = getRandomItem<string>(this.mockData.backgroundImage);
+    const poster = getRandomItem<string>(this.mockData.posters);
+    const backgroundColor = getRandomItem<string>(this.mockData.backgroundColors);
+    const backgroundImage = getRandomItem<string>(this.mockData.backgroundImages);
 
     return [
       titleMovie,
@@ -55,7 +55,7 @@ export default class MovieGenerator implements MovieGeneratorInterface {
       moviePreviewLink,
       movieVideoLink,
       actors,
-      producers,
+      directors,
       duration,
       commentsCount,
       userName,

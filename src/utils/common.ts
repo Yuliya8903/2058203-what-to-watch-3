@@ -1,22 +1,21 @@
-import { genreMovies } from '../types/movie-genre.enum.js';
-import { Movie } from '../types/movie.type.js';
+import crypto from 'crypto';
 
-export const createMovie = (row: string): Movie => {
+export const createMovie = (row: string) => {
   const tokens = row.replace('\n', '').split('\t');
   const [
-    titleFilm,
+    titleMovie,
     description,
     publicationDate,
     genreMovie,
     releaseYear,
     rating,
-    moviePreview,
-    movieVideo,
+    moviePreviewLink,
+    movieVideoLink,
     actors,
-    producers,
+    director,
     duration,
-    commentsCount,
     poster,
+    commentsCount,
     userName,
     email,
     avatar,
@@ -26,25 +25,19 @@ export const createMovie = (row: string): Movie => {
   ] = tokens;
 
   return {
-    titleMovie: titleFilm,
-    description: description,
+    titleMovie,
+    description,
     publicationDate: new Date(publicationDate),
-    genreMovie: genreMovie.split(';').map((g) => {
-      if (g in Object.keys(genreMovie)) {
-        return g as genreMovies;
-      } else {
-        throw new Error('There is no such genre!');
-      }
-    }),
-    releaseYear: parseInt(releaseYear, 10),
-    rating: parseFloat(rating),
-    moviePreviewLink: moviePreview,
-    movieVideoLink: movieVideo,
-    actors: actors.split(';'),
-    producers: producers.split(';'),
-    duration: parseInt(duration, 10),
-    commentsCount: parseInt(commentsCount, 10),
+    genreMovie,
+    releaseYear: Number(releaseYear),
+    rating: Number(rating),
+    moviePreviewLink,
+    movieVideoLink,
+    actors: actors.split('; '),
+    director,
+    duration: Number(duration),
     poster: poster,
+    commentsCount: Number(commentsCount),
     user: { userName, email, avatar, password },
     backgroundImage: backgroundImage,
     backgroundColor: backgroundColor,
@@ -53,3 +46,8 @@ export const createMovie = (row: string): Movie => {
 
 export const getErrorMessage = (error: Error | string): string =>
   error instanceof Error ? error.message : '';
+
+export const createSHA256 = (line: string, salt: string): string => {
+  const shaHasher = crypto.createHmac('sha256', salt);
+  return shaHasher.update(line).digest('hex');
+};

@@ -1,15 +1,15 @@
 export type mockData = {
-  titleMovie: string[];
-  description: string[];
+  titlesMovie: string[];
+  descriptions: string[];
   rating: string[];
-  moviePreviewLink: string[];
-  movieVideoLink: string[];
+  moviePreviewsLink: string[];
+  movieVideosLink: string[];
   actors: string[];
-  producers: string[];
-  poster: string[];
-  userName: string[];
-  email: string[];
-  avatar: string[];
-  backgroundImage: string[];
-  backgroundColor: string[];
+  directors: string[];
+  posters: string[];
+  usersName: string[];
+  emails: string[];
+  avatars: string[];
+  backgroundImages: string[];
+  backgroundColors: string[];
 }

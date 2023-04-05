@@ -5,6 +5,7 @@ import {UserServiceInterface} from './user-service.interface.js';
 import {LoggerInterface} from '../../common/logger/logger.interface.js';
 import CreateUserDto from './dto/create-user.dto.js';
 import {Component} from '../../types/component.type.js';
+import mongoose from 'mongoose';
 
 @injectable()
 export default class UserService implements UserServiceInterface {
@@ -39,5 +40,67 @@ export default class UserService implements UserServiceInterface {
     }
 
     return this.create(dto, salt);
+  }
+
+  public async findFavorites(userID: string): Promise<DocumentType<UserEntity>[] | null> {
+    return this.userModel
+      .aggregate([
+        {
+          $unwind: '$favorites',
+        },
+        {
+          $match: { '_id': new mongoose.Types.ObjectId(userID) },
+        },
+        {
+          $lookup: {
+            from: 'movies',
+            localField: 'favorites',
+            foreignField: '_id',
+            as: 'movie'
+          },
+        },
+        {
+          $unwind: '$movie'
+        },
+        {
+          $addFields: {
+            titleMovie: '$movie.titleMovie',
+            publicationDate: '$movie.publicationDate',
+            genreMovie: '$movie.genreMovie',
+            moviePreviewLink: '$movie.moviePreviewLink',
+            user: '$movie.userID',
+            poster: '$movie.poster',
+            commentsCount: '$movie.commentsCount'
+          }
+        },
+        {
+          $project: {'_id': 0, 'userName': 0, 'email': 0, 'avatar': 0, 'password': 0, 'createdAt': 0, 'updatedAt': 0, 'favorites': 0, 'movie': 0}
+        },
+        {
+          $lookup: {
+            from: 'users',
+            localField: 'user',
+            foreignField: '_id',
+            as: 'user',
+          },
+        },
+        {
+          $unwind: '$user'
+        },
+      ]);
+  }
+
+  public async addFavorite(userID: string, movieID: string): Promise<void | null> {
+    return this.userModel.findByIdAndUpdate(userID,
+      {
+        $push: {favorites: movieID}
+      });
+  }
+
+  public async removeFavorite(userID: string, movieID: string): Promise<void | null> {
+    return this.userModel.findByIdAndUpdate(userID,
+      {
+        $pull: {favorites: movieID}
+      });
   }
 }

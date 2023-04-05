@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
     minLenght: [1, 'Min lenght for name is 1'],
     maxLenght: [15, 'Max lenght for name is 15'],
   },
+
   email: {
     type: String,
     unique: true,
@@ -28,6 +29,8 @@ const userSchema = new mongoose.Schema({
     minLenght: [6, 'Min lenght for password is 6'],
     maxLenght: [15, 'Max lenght for password is 15'],
   },
+
+  favorites: [String],
 }, {
   timestamps: true,
 });

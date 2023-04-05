@@ -7,7 +7,7 @@ import { DatabaseInterface } from './database.interface.js';
 @injectable()
 export default class DatabaseService implements DatabaseInterface {
   constructor(
-    @inject(Component.LoggerInterface) private logger: LoggerInterface
+    @inject(Component.LoggerInterface) private logger: LoggerInterface,
   ) {}
 
   public async connect(uri: string): Promise<void> {

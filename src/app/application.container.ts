@@ -5,7 +5,7 @@ import { ConfigInterface } from '../common/config/config.interface.js';
 import ConfigService from '../common/config/config.service.js';
 import { DatabaseInterface } from '../common/database-client/database.interface.js';
 import DatabaseService from '../common/database-client/database.service.js';
-import { Component } from '../types/component.type.js';
+import { Component } from '../types/components.type.js';
 import Application from './application.js';
 
 const applicationContainer = new Container();

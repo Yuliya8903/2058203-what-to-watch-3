@@ -1,4 +1,4 @@
-import typegoose, {defaultClasses, getModelForClass, Ref} from '@typegoose/typegoose';
+import typegoose, {defaultClasses, getModelForClass, Ref, Severity} from '@typegoose/typegoose';
 import { UserEntity } from '../user/user.entity.js';
 
 const {prop, modelOptions} = typegoose;
@@ -8,7 +8,8 @@ export interface MovieEntity extends defaultClasses.Base {}
 @modelOptions({
   schemaOptions: {
     collection: 'movies'
-  }
+  },
+  options: {allowMixed: Severity.ALLOW},
 })
 
 export class MovieEntity extends defaultClasses.TimeStamps {
@@ -49,7 +50,7 @@ export class MovieEntity extends defaultClasses.TimeStamps {
   public poster!: string;
 
   @prop ({default: 0})
-  public commentsCount!: number;
+  public comment!: number;
 
   @prop ({
     ref: UserEntity,

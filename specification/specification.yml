@@ -19,6 +19,116 @@ tags:
     description: Действия с пользователями.
 
 paths:
+  /users/register:
+    post:
+      tags:
+        - users
+      summary: Регистрация нового пользователя.
+      description: Регистрирует нового пользователя.
+
+      requestBody:
+        description: Информация для регистрации нового пользователя.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newUser'
+        required: true
+
+      responses:
+        "201":
+          description: Пользователь зарегистрирован. Объект пользователя.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+        "409":
+          description: Пользователь с таким e-mail уже зарегистрирован.
+
+  /users/login:
+    post:
+      tags:
+        - users
+      summary: Авторизация пользователя.
+      description: Осуществляется вход на основании логина и пароля.
+
+      requestBody:
+        description: Объект, содержащий логин и пароль пользователя.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/login'
+        required: true
+
+      responses:
+        "200":
+          description: Статус авторизации.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authorizedUser'
+
+        "400":
+          description: Ошибка запроса.
+
+        "404":
+          description: Пользователь не найден.
+
+    get:
+      tags:
+        - users
+      summary: Проверка авторизации пользователя.
+      description: Возвращает информацию по авторизованному пользователю.
+
+      responses:
+        "200":
+          description: Статус авторизации пользователя.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/authorizedUser"
+
+        "401":
+          description: Пользователь не авторизован.
+
+  /users/{userID}/avatar:
+    post:
+      tags:
+        - users
+      summary: Загрузить изображение аватара пользователя.
+      description: Загружает изображение аватара пользователя. изображение аватара должно быть в формате '.png' или '.jpg'
+
+      parameters:
+        - name: userID
+          in: path
+          description: Уникальный идентификатор пользователя.
+          required: true
+          schema:
+            type: number
+            example: 001
+
+      responses:
+        "201":
+          description: Данные пользователя изменены.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authorizedUser'
+
+        "400":
+          description: Ошибка тела запроса.
+
+  /users/logout:
+    delete:
+      tags:
+        - users
+      summary: Завершить сеанс пользователя.
+      description: Завершает сеанс работы - выход из закрытой части приложения.
+
+      responses:
+        "204":
+          description: Сеанс завершен.
+
   /movies:
     post:
       tags:
@@ -50,7 +160,7 @@ paths:
 
     get:
       tags:
-        -movies
+        - movies
       summary: Получение списка фильмов.
       description: Возвращает массив фильмов. Каждый фильм описан в виде массивов.
 
@@ -135,7 +245,7 @@ paths:
         "403":
           description: Страница не доступна (нет доступа).
 
-  /movies/genre:
+  /movies/genreMovie:
     get:
       tags:
         - movies
@@ -277,116 +387,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/comments'
 
-  /users/register:
-    post:
-      tags:
-        - users
-      summary: Регистрация нового пользователя.
-      description: Регистрирует нового пользователя.
-
-      requestBody:
-        description: Информация для регистрации нового пользователя.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/newUser'
-        required: true
-
-      responses:
-        "201":
-          description: Пользователь зарегистрирован. Объект пользователя.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/user'
-
-        "409":
-          description: Пользователь с таким e-mail уже зарегистрирован.
-
-  /users/login:
-    post:
-      tags:
-        - users
-      summary: Авторизация пользователя.
-      description: Осуществляется вход на основании логина и пароля.
-
-      requestBody:
-        description: Объект, содержащий логин и пароль пользователя.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/login'
-        required: true
-
-      responses:
-        "200":
-          description: Статус авторизации.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/authorizedUser'
-
-        "400":
-          description: Ошибка запроса.
-
-        "404":
-          description: Пользователь не найден.
-
-    get:
-      tags:
-        - users
-      summary: Проверка авторизации пользователя.
-      description: Возвращает информацию по авторизованному пользователю.
-
-      responses:
-        "200":
-          description: Статус авторизации пользователя.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/authorizedUser"
-
-        "401":
-          description: Пользователь не авторизован.
-
-  /users/{userID}/avatar:
-    post:
-      tags:
-        - users
-      summary: Загрузить изображение аватара пользователя.
-      description: Загружает изображение аватара пользователя. изображение аватара должно быть в формате '.png' или '.jpg'
-
-      parameters:
-        - name: userID
-          in: path
-          description: Уникальный идентификатор пользователя.
-          required: true
-          schema:
-            type: number
-            example: 001
-
-      responses:
-        "201":
-          description: Данные пользователя изменены.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/authorizedUser'
-
-        "400":
-          description: Ошибка тела запроса.
-
-  /users/logout:
-    delete:
-      tags:
-        - users
-      summary: Завершить сеанс пользователя.
-      description: Завершает сеанс работы - выход из закрытой части приложения.
-
-      responses:
-        "204":
-          description: Сеанс завершен.
-
 components:
   schemas:
     newMovie:
@@ -401,7 +401,7 @@ components:
           type: string
           example: A biopic depicting the early years of legendary director and aviator Howard Hughes' career from the late 1920s to the mid 1940s.
 
-        genre:
+        genreMovie:
           type: string
           example: Drama
 
@@ -411,11 +411,11 @@ components:
 
         moviePreviewLink:
           type: string
-          example: https://www.what-to-watch.com/video-preview/Aviator_preview.mp4
+          example: https://www.youtube.com/watch?v=FebPJlmgldE
 
         movieVideoLink:
           type: string
-          example: https://www.what-to-watch.com/video/Aviator.mp4
+          example: https://www.youtube.com/watch?v=xWU-IVcPqHk
 
         actors:
           type: array
@@ -437,11 +437,11 @@ components:
 
         poster:
           type: string
-          example: https://www.what-to-watch.com/poster/Aviator.jpg
+          example: https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/10fcbd4a-43ee-4ae0-a564-5558574185d8/3840x
 
         backgroundImage:
           type: string
-          example: https://www.what-to-watch.com/backgroundimages/Aviator.jpg
+          example: https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp
 
         backgroundColor:
           type: string
@@ -459,7 +459,7 @@ components:
           type: string
           example: A biopic depicting the early years of legendary director and aviator Howard Hughes' career from the late 1920s to the mid 1940s.
 
-        genre:
+        genreMovie:
           type: string
           example: Drama
 
@@ -469,11 +469,11 @@ components:
 
         moviePreviewLink:
           type: string
-          example: https://www.what-to-watch.com/video-preview/Aviator_preview.mp4
+          example: https://www.youtube.com/watch?v=FebPJlmgldE
 
         movieVideoLink:
           type: string
-          example: https://www.what-to-watch.com/video/Aviator.mp4
+          example: https://www.youtube.com/watch?v=xWU-IVcPqHk
 
         actors:
           type: array
@@ -495,11 +495,11 @@ components:
 
         poster:
           type: string
-          example: https://www.what-to-watch.com/poster/Aviator.jpg
+          example: https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/10fcbd4a-43ee-4ae0-a564-5558574185d8/3840x
 
         backgroundImage:
           type: string
-          example: https://www.what-to-watch.com/backgroundimages/Aviator.jpg
+          example: https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp
 
         backgroundColor:
           type: string
@@ -526,7 +526,7 @@ components:
           format: date-time
           example: 2023-01-01T00:00:00.000Z
 
-        genre:
+        genreMovie:
           type: string
           example: Drama
 
@@ -540,11 +540,11 @@ components:
 
         moviePreviewLink:
           type: string
-          example: https://www.what-to-watch.com/video-preview/Aviator_preview.mp4
+          example: https://www.youtube.com/watch?v=FebPJlmgldE
 
         movieVideoLink:
           type: string
-          example: https://www.what-to-watch.com/video/Aviator.mp4
+          example: https://www.youtube.com/watch?v=xWU-IVcPqHk
 
         actors:
           type: array
@@ -570,11 +570,11 @@ components:
 
         poster:
           type: string
-          example: https://www.what-to-watch.com/poster/Aviator.jpg
+          example: https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/10fcbd4a-43ee-4ae0-a564-5558574185d8/3840x
 
         backgroundImage:
           type: string
-          example: https://www.what-to-watch.com/backgroundimages/Aviator.jpg
+          example: https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp
 
         backgroundColor:
           type: string
@@ -586,23 +586,23 @@ components:
       items:
         type: object
 
-      properties:
-        titleMovie:
-          type: string
-          example: Aviator
+        properties:
+          titleMovie:
+            type: string
+            example: Aviator
 
-        publicationDate:
-          type: string
-          format: date-time
-          example: 2023-01-01T00:00:00.000Z
+          publicationDate:
+            type: string
+            format: date-time
+            example: 2023-01-01T00:00:00.000Z
 
-          genre:
+          genreMovie:
             type: string
             example: Drama
 
           moviePreviewLink:
             type: string
-            example: https://www.what-to-watch.com/video-preview/Aviator_preview.mp4
+            example: https://www.youtube.com/watch?v=FebPJlmgldE
 
           comments:
             type: number
@@ -614,7 +614,7 @@ components:
 
           poster:
             type: string
-            example: https://www.what-to-watch.com/poster/Aviator.jpg
+            example: https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/10fcbd4a-43ee-4ae0-a564-5558574185d8/3840x
 
     newComment:
       type: object
@@ -667,7 +667,7 @@ components:
       properties:
         name:
           type: string
-          example: Петров Петр
+          example: Petrov Petr
 
         email:
           type: string
@@ -676,10 +676,6 @@ components:
         password:
           type: string
           example: pass6428
-
-        avatar:
-          type: string
-          example: https://www.what-to-watch.com/avatar/Petrov.jpg
 
     user:
       type: object
@@ -687,7 +683,7 @@ components:
       properties:
         name:
           type: string
-          example: Петров Петр
+          example: Petrov Petr
 
         email:
           type: string
@@ -699,7 +695,7 @@ components:
 
         avatar:
           type: string
-          example: https://www.what-to-watch.com/avatar/Petrov.jpg
+          example: https://avatarko.ru/kartinka/8126
 
     login:
       type: object
@@ -709,7 +705,9 @@ components:
           type: string
           example: mail@mail.ru
 
-        password: pass6428
+        password:
+          type: string
+          example: pass6428
 
     authorizedUser:
       type: object
@@ -717,7 +715,7 @@ components:
       properties:
         name:
           type: string
-          example: Петров Петр
+          example: Petrov Petr
 
         email:
           type: string
@@ -729,7 +727,7 @@ components:
 
         avatar:
           type: string
-          example: https://www.what-to-watch.com/avatar/Petrov.jpg
+          example: https://avatarko.ru/kartinka/8126
 
         token:
           type: string

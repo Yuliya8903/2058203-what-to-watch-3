@@ -4,7 +4,7 @@ import {UserEntity} from './user.entity.js';
 import {UserServiceInterface} from './user-service.interface.js';
 import {LoggerInterface} from '../../common/logger/logger.interface.js';
 import CreateUserDto from './dto/create-user.dto.js';
-import {Component} from '../../types/component.type.js';
+import {Component} from '../../types/components.type.js';
 import mongoose from 'mongoose';
 
 @injectable()
@@ -70,7 +70,7 @@ export default class UserService implements UserServiceInterface {
             moviePreviewLink: '$movie.moviePreviewLink',
             user: '$movie.userID',
             poster: '$movie.poster',
-            commentsCount: '$movie.commentsCount'
+            comments: '$movie.comments'
           }
         },
         {

@@ -21,9 +21,9 @@ export const configSchema = convict<ConfigSchema>({
     default: 4000
   },
   SALT: {
-    doc: 'Port for incoming connections',
-    format: 'port',
-    env: 'PORT',
+    doc: 'Salt for password hash',
+    format: String,
+    env: 'SALT',
     default: null
   },
   DB_HOST: {
@@ -46,7 +46,7 @@ export const configSchema = convict<ConfigSchema>({
   },
   DB_PORT: {
     doc: 'Port to connect to the database (MongoDB)',
-    format: String,
+    format: 'port',
     env: 'DB_PORT',
     default: 27017
   },

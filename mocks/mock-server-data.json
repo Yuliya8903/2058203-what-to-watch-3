@@ -1,6 +1,6 @@
 {
   "api": {
-    "titleMovie": [
+    "titlesMovie": [
       "Aviator",
       "The Grand Budapest Hotel",
       "Bohemian rhapsody",
@@ -9,7 +9,7 @@
       "Johnny English",
       "Revenant"
     ],
-    "description": [
+    "descriptions": [
       "Based on the 1993 non-fiction book Howard Hughes: The Secret Life by Charles Higham, the film depicts the life of Howard Hughes, an aviation pioneer and director of the film Hell's Angels. The film portrays his life from 1927 to 1947 during which time Hughes became a successful film producer and an aviation magnate while simultaneously growing more unstable due to severe obsessive–compulsive disorder (OCD).",
       "In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege. Gustave prides himself on providing first-class service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.",
       "It focuses on the life of Freddie Mercury, the lead singer of the British rock band Queen, from the formation of the band in 1970 to their 1985 Live Aid performance at the original Wembley Stadium.",
@@ -18,7 +18,7 @@
       "When a funeral of a British spy is attacked, all of the remaining spies are killed. Only one spy is left and is now Britain's last hope. Johnny English and his sidekick, Bough have been assigned the case of investigating the theft of the British Crown Jewels. The prime suspect is a mysterious French entrepreneur, known as Pascal Sauvage. English and Bough soon find out the horrifying truth behind the theft and Sauvage, but it's not going to be an easy job to bring him to justice.",
       "'The Revenant' follows the story of legendary explorer Hugh Glass (DiCaprio) on his quest for survival and justice. After a brutal bear attack, Glass is left for dead by a treacherous member of his hunting team (Tom Hardy). Against extraordinary odds, and enduring unimaginable grief, Glass battles a relentless winter in uncharted terrain. This epic adventure captures the extraordinary power of the human spirit in an immersive and visceral experience unlike anything before."
     ],
-    "genreMovie": [
+    "genresMovie": [
       "Comedy",
       "Crime",
       "Documentary",
@@ -38,7 +38,7 @@
       "2003",
       "2015"
     ],
-    "rating": [
+    "ratings": [
       "1",
       "2",
       "3",
@@ -50,7 +50,7 @@
       "9",
       "10"
     ],
-    "moviePrewiewLink": [
+    "moviePreviewsLink": [
       "https://www.youtube.com/watch?v=FebPJlmgldE",
       "https://www.youtube.com/watch?v=zru-1DbbcsA",
       "https://www.youtube.com/watch?v=mP0VHJYFOAU",
@@ -59,11 +59,11 @@
       "https://www.youtube.com/watch?v=EG0MR5dFz7E",
       "https://www.youtube.com/watch?v=LoebZZ8K5N0"
     ],
-    "movieVideoLink": [
+    "movieVideosLink": [
       "https://www.youtube.com/watch?v=xWU-IVcPqHk",
       "https://www.youtube.com/watch?v=OWDxJj092ac",
       "https://www.youtube.com/watch?v=-HFPG2z5gVE",
-      "https://www.youtube.com/watch?v=61GUTb11r_4",
+      "https://www.youtube.com/watch?v=fgQJc6ZPrEc",
       "https://www.youtube.com/watch?v=_6aisilZMhQ",
       "https://www.youtube.com/watch?v=REodd03pdkQ",
       "https://www.youtube.com/watch?v=UZB1ea6nIc0"
@@ -77,7 +77,7 @@
       "Rowan Atkinson, Natalie Imbruglia, Ben Miller, John Malkovich",
       "Leonardo DiCaprio, Tom Hardy, Domhnall Gleeson, Will Poulter"
     ],
-    "director": [
+    "directors": [
       "Martin Scorsese",
       "Wes Anderson",
       "Bryan Singer",
@@ -86,7 +86,7 @@
       "Peter Howitt",
       "Alejandro G. Iñárritu"
     ],
-    "duration": [
+    "durations": [
       163,
       100,
       134,
@@ -95,7 +95,7 @@
       84,
       156
     ],
-    "poster": [
+    "posters": [
       "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/10fcbd4a-43ee-4ae0-a564-5558574185d8/3840x",
       "https://cdna.artstation.com/p/assets/images/images/019/199/698/large/harsh-borah-810d617qzdl-sl1500-2000x.jpg?1562460759",
       "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/e975c93d0f601d4f43fa2881ce34f953c4b738f8c33c8d150b47c983c44fa233._RI_V_TTW_.jpg",
@@ -104,35 +104,42 @@
       "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/d7a1a960-ad6a-4a06-9586-18c14e469f48/3840x",
       "https://images6.fanpop.com/image/photos/39700000/The-Revenant-movies-39702149-1523-1759.jpg"
     ],
-    "userName": [
-      "Петров Петр",
-      "Павлов Павел",
-      "Борисов Борис",
-      "Семёнов Семён",
-      "Смирнов Иван"
+    "usersNames": [
+      "Petrov Petr",
+      "Pavlov Pavel",
+      "Borisov Boris",
+      "Semenov Semen",
+      "Smirnov Ivan"
     ],
-    "email": [
+    "emails": [
       "mail@mail.ru",
       "mail1@mail.ru",
       "mail2@mail.ru",
       "mail3@mail.ru",
       "mail4@mail.ru"
     ],
-    "avatar": [
+    "avatars": [
       "https://avatarko.ru/kartinka/8126",
       "https://avatarko.ru/kartinka/33779",
       "https://avatarko.ru/kartinka/8759",
       "https://avatarko.ru/kartinka/15289",
       "https://avatarko.ru/kartinka/1342"
     ],
-    "backgroundImage": [
-      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
-      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
-      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
-      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp",
-      "https://yandex.ru/images/search?text=background+Images+jpg&img_url=https%3A%2F%2Fres.allmacwallpaper.com%2Fget%2FRetina-MacBook-Pro-15-inch-wallpapers%2FUnderwater-2880x1800%2F2922-8.jpg&pos=9&rpt=simage&stype=image&lr=62&parent-reqid=1679694050935135-12164990087383630875-balancer-l7leveler-kubr-yp-sas-5-BAL-1985&source=serp"
+    "passwords": [
+      "741PeP258gda",
+      "852PPav470mnb",
+      "mnb630zxcBor369",
+      "fghSem951qwe",
+      "051Sm840I73"
     ],
-    "backgroundColor": [
+    "backgroundImages": [
+      "https://i.ytimg.com/vi/_TLg3nJ4Xrk/maxresdefault.jpg",
+      "https://i.ytimg.com/vi/_TLg3nJ4Xrk/maxresdefault.jpg",
+      "https://i.ytimg.com/vi/_TLg3nJ4Xrk/maxresdefault.jpg",
+      "https://i.ytimg.com/vi/_TLg3nJ4Xrk/maxresdefault.jpg",
+      "https://i.ytimg.com/vi/_TLg3nJ4Xrk/maxresdefault.jpg"
+    ],
+    "backgroundColors": [
       "0054d1",
       "0000ff",
       "114696",

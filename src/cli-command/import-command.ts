@@ -41,6 +41,7 @@ export default class ImportCommand implements CliCommandInterface {
     const user = await this.userService.findOrCreate({
       ...movie.user,
       password: DEFAULT_USER_PASSWORD,
+      favorites: ''
     }, this.salt);
 
     await this.movieService.create({

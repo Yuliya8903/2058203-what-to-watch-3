@@ -1,5 +1,5 @@
 import { User } from '../../types/user.type.js';
-import typegoose, {defaultClasses, getModelForClass} from '@typegoose/typegoose';
+import typegoose, {defaultClasses, getModelForClass, Severity} from '@typegoose/typegoose';
 import { createSHA256 } from '../../utils/common.js';
 
 const {prop, modelOptions} = typegoose;
@@ -9,26 +9,27 @@ export interface UserEntity extends defaultClasses.Base {}
 @modelOptions({
   schemaOptions: {
     collection: 'users'
-  }
+  },
+  options: {allowMixed: Severity.ALLOW},
 })
 
 export class UserEntity extends defaultClasses.TimeStamps implements User {
   constructor(data: User) {
     super();
 
+    this.userName = data.userName;
     this.email = data.email;
     this.avatar = data.avatar;
-    this.userName = data.userName;
   }
+
+  @prop({required: true, default: ''})
+  public userName!: string;
 
   @prop({unique: true, required: true})
   public email!: string;
 
   @prop({default: ''})
   public avatar!: string;
-
-  @prop({required: true, default: ''})
-  public userName!: string;
 
   @prop({required: true, default: ''})
   private password!: string;

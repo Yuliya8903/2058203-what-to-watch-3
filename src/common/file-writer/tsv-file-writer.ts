@@ -1,7 +1,7 @@
 import { createWriteStream, WriteStream } from 'fs';
 import { FileWriterInterface } from './file-writer-interface.js';
 
-export default class tsvFileWriter implements FileWriterInterface {
+export default class TSVFileWriter implements FileWriterInterface {
   private stream: WriteStream;
 
   constructor(public readonly filename: string) {

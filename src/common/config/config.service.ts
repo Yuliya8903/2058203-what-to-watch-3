@@ -3,7 +3,7 @@ import {inject, injectable} from 'inversify';
 import {ConfigInterface} from './config.interface.js';
 import {LoggerInterface} from '../logger/logger.interface.js';
 import {configSchema, ConfigSchema} from './config.schema.js';
-import {Component} from '../../types/component.type.js';
+import {Component} from '../../types/components.type.js';
 
 @injectable()
 export default class ConfigService implements ConfigInterface {

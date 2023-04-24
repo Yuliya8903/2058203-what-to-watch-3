@@ -13,7 +13,7 @@ export type Movie = {
   director: string;
   duration: number;
   poster: string;
-  commentsCount: number;
+  comments: number;
   user: User;
   backgroundImage: string;
   backgroundColor: string;

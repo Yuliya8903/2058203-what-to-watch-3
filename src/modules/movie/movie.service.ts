@@ -2,12 +2,12 @@ import { inject, injectable } from 'inversify';
 import { MovieServiceInterface } from './movie-service.interface.js';
 import CreateMovieDto from './dto/create-movie.dto.js';
 import { LoggerInterface } from '../../common/logger/logger.interface.js';
-import { Component } from '../../types/component.type.js';
+import { Component } from '../../types/components.type.js';
 import { DocumentType, types } from '@typegoose/typegoose';
 import { MovieEntity } from './movie.entity.js';
 import mongoose from 'mongoose';
 import EditMovieDto from './dto/edit-movie.dto.js';
-import { DEFAULT_MOVIE_COUNT, FILM_SHORT_FIELDS } from './movie.constant.js';
+import { DEFAULT_MOVIE_COUNT, MOVIE_SHORT_FIELDS } from './movie.constant.js';
 import { SortType } from '../../types/sort.type.js';
 
 @injectable()
@@ -63,7 +63,7 @@ export default class MovieService implements MovieServiceInterface {
     const limit = count ?? DEFAULT_MOVIE_COUNT;
     return this.movieModel
       .find({}, {}, {limit})
-      .select(FILM_SHORT_FIELDS)
+      .select(MOVIE_SHORT_FIELDS)
       .sort({publicationDate: SortType.Down})
       .populate(['userID'])
       .exec();

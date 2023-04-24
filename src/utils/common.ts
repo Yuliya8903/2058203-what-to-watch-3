@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import { Movie } from '../types/movie.type.js';
 
 export const createMovie = (row: string) => {
   const tokens = row.replace('\n', '').split('\t');
@@ -15,7 +16,7 @@ export const createMovie = (row: string) => {
     director,
     duration,
     poster,
-    commentsCount,
+    comments,
     userName,
     email,
     avatar,
@@ -33,15 +34,15 @@ export const createMovie = (row: string) => {
     rating: Number(rating),
     moviePreviewLink,
     movieVideoLink,
-    actors: actors.split('; '),
+    actors: actors.split('; ').map((actor) => (actor)),
     director,
     duration: Number(duration),
     poster: poster,
-    commentsCount: Number(commentsCount),
+    comments: Number(comments),
     user: { userName, email, avatar, password },
     backgroundImage: backgroundImage,
     backgroundColor: backgroundColor,
-  };
+  } as Movie;
 };
 
 export const getErrorMessage = (error: unknown): string =>

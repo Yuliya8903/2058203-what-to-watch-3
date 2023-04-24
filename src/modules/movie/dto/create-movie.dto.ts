@@ -11,7 +11,7 @@ export default class CreateMovieDto {
   public director!: string;
   public duration!: number;
   public poster!: string;
-  public commentsCount!: number;
+  public comments!: number;
   public userID!: string;
   public backgroundImage!: string;
   public backgroundColor!: string;

@@ -13,4 +13,4 @@ export type mockData = {
   passwords: string[];
   backgroundImages: string[];
   backgroundColors: string[];
-}
+};

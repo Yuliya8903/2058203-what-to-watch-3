@@ -2,3 +2,133 @@
 GET http://localhost:3123/api HTTP/1.1
 
 ###
+
+# Фильмы
+## Получить список фильмов
+
+GET http://localhost:4000/movies HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Создать карточку фильма
+
+POST http://localhost:4000/movies HTTP/1.1
+Content-Type: application/json
+
+{
+  "titleMovie": "Macbeth",
+  "description": "Macbeth, the Thane of Glamis, receives a prophecy from a trio of witches that one day he will become King of Scotland. Consumed by ambition and spurred to action by his wife, Macbeth murders his king and takes the throne for himself.",
+  "publicationDate": "2023-02-02T00:00:00.000Z",
+  "genreMovie": "Drama",
+  "releaseYear": 2015,
+  "moviePreviewLink": "https://www.youtube.com/watch?v=YqHhKuCQmoY",
+  "movieVideoLink": "https://www.youtube.com/watch?v=E3Pzx7tUsQQ",
+  "actors": [
+    "Michael Fassbender",
+    "Marion Cotillard",
+    "Jack Madigan"
+  ],
+  "director": "Justin Kurzel",
+  "duration": 113,
+  "poster": "https://i.pinimg.com/originals/f8/d6/2a/f8d62aef2a0cbc14d91e889e4097cf82.jpg",
+  "userID": "84jasvjhg5fd",
+  "backgroundImage": "https://i.ytimg.com/vi/_TLg3nJ4Xrk/maxresdefault.jpg",
+  "backgroundColor": "0054d1"
+}
+
+###
+
+## Получить информацию по фильму
+
+GET http://localhost:4000/movies/644c147cd3d4ea1a435fea85 HTTP/1.1
+Content-Type: application/json
+
+###
+
+## Редактировать информацию по фильму
+
+POST http://localhost:4000/movies/644c147cd3d4ea1a435fea85 HTTP/1.1
+Content-Type: application/json
+
+{
+  "titleMovie": "New title movie"
+}
+
+###
+
+## Удалить фильм
+
+DELETE http://localhost:4000/movies/644c147cd3d4ea1a435fea85 HTTP/1.1
+
+###
+
+## Получить список фильмов определенного жанра
+
+GET http://localhost:4000/movies?limit=3&genresMovie=Drama HTTP/1.1
+Content-Type: application/json
+
+###
+
+## Получить промо фильм
+
+GET http://localhost:4000/movies/promo HTTP/1.1
+Content-Type: application/json
+
+###
+
+# Пользователи
+## Регистрация пользователя
+
+POST  http://localhost:4000/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "userName": "DiCaprio",
+  "email": "dicaprio@gmail.com",
+  "avatar": "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTk2MDg3Nzk1OTc3MDM3NzM0/leonardo-dicaprio-young-1993.webp",
+  "password": "Di725CapLeo"
+}
+
+###
+
+## Авторизация пользователя
+
+POST  http://localhost:4000/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "mail@mail.ru",
+  "password": "741PeP258gda"
+}
+
+###
+
+## Получить список фильмов "К просмотру"
+
+GET http://localhost:4000/users/favorites/644bd21590e4c195871acb98 HTTP/1.1
+Content-Type: application/json
+
+###
+
+## Добавить фильм в список "К просмотру"
+
+POST  http://localhost:4000/users/favorites/644bd21590e4c195871acb98 HTTP/1.1
+Content-Type: : application/json
+
+{
+  "movieId": "644bd21590e4c195871acb9a"
+}
+
+###
+
+## Удалить фильм из списка фильмов "К просмотру"
+
+DELETE http://localhost:4000/users/favorites/644bd21590e4c195871acb98 HTTP/1.1
+Content-Type: application/json
+
+{
+  "movieId": "644bd21590e4c195871acba4"
+}
+
+###

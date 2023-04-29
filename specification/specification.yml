@@ -19,116 +19,6 @@ tags:
     description: Действия с пользователями.
 
 paths:
-  /users/register:
-    post:
-      tags:
-        - users
-      summary: Регистрация нового пользователя.
-      description: Регистрирует нового пользователя.
-
-      requestBody:
-        description: Информация для регистрации нового пользователя.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/newUser'
-        required: true
-
-      responses:
-        "201":
-          description: Пользователь зарегистрирован. Объект пользователя.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/user'
-
-        "409":
-          description: Пользователь с таким e-mail уже зарегистрирован.
-
-  /users/login:
-    post:
-      tags:
-        - users
-      summary: Авторизация пользователя.
-      description: Осуществляется вход на основании логина и пароля.
-
-      requestBody:
-        description: Объект, содержащий логин и пароль пользователя.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/login'
-        required: true
-
-      responses:
-        "200":
-          description: Статус авторизации.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/authorizedUser'
-
-        "400":
-          description: Ошибка запроса.
-
-        "404":
-          description: Пользователь не найден.
-
-    get:
-      tags:
-        - users
-      summary: Проверка авторизации пользователя.
-      description: Возвращает информацию по авторизованному пользователю.
-
-      responses:
-        "200":
-          description: Статус авторизации пользователя.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/authorizedUser"
-
-        "401":
-          description: Пользователь не авторизован.
-
-  /users/{userID}/avatar:
-    post:
-      tags:
-        - users
-      summary: Загрузить изображение аватара пользователя.
-      description: Загружает изображение аватара пользователя. изображение аватара должно быть в формате '.png' или '.jpg'
-
-      parameters:
-        - name: userID
-          in: path
-          description: Уникальный идентификатор пользователя.
-          required: true
-          schema:
-            type: number
-            example: 001
-
-      responses:
-        "201":
-          description: Данные пользователя изменены.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/authorizedUser'
-
-        "400":
-          description: Ошибка тела запроса.
-
-  /users/logout:
-    delete:
-      tags:
-        - users
-      summary: Завершить сеанс пользователя.
-      description: Завершает сеанс работы - выход из закрытой части приложения.
-
-      responses:
-        "204":
-          description: Сеанс завершен.
-
   /movies:
     post:
       tags:
@@ -386,6 +276,116 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/comments'
+
+  /users/register:
+    post:
+      tags:
+        - users
+      summary: Регистрация нового пользователя.
+      description: Регистрирует нового пользователя.
+
+      requestBody:
+        description: Информация для регистрации нового пользователя.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newUser'
+        required: true
+
+      responses:
+        "201":
+          description: Пользователь зарегистрирован. Объект пользователя.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+        "409":
+          description: Пользователь с таким e-mail уже зарегистрирован.
+
+  /users/login:
+    post:
+      tags:
+        - users
+      summary: Авторизация пользователя.
+      description: Осуществляется вход на основании логина и пароля.
+
+      requestBody:
+        description: Объект, содержащий логин и пароль пользователя.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/login'
+        required: true
+
+      responses:
+        "200":
+          description: Статус авторизации.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authorizedUser'
+
+        "400":
+          description: Ошибка запроса.
+
+        "404":
+          description: Пользователь не найден.
+
+    get:
+      tags:
+        - users
+      summary: Проверка авторизации пользователя.
+      description: Возвращает информацию по авторизованному пользователю.
+
+      responses:
+        "200":
+          description: Статус авторизации пользователя.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/authorizedUser"
+
+        "401":
+          description: Пользователь не авторизован.
+
+  /users/{userID}/avatar:
+    post:
+      tags:
+        - users
+      summary: Загрузить изображение аватара пользователя.
+      description: Загружает изображение аватара пользователя. изображение аватара должно быть в формате '.png' или '.jpg'
+
+      parameters:
+        - name: userID
+          in: path
+          description: Уникальный идентификатор пользователя.
+          required: true
+          schema:
+            type: number
+            example: 001
+
+      responses:
+        "201":
+          description: Данные пользователя изменены.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authorizedUser'
+
+        "400":
+          description: Ошибка тела запроса.
+
+  /users/logout:
+    delete:
+      tags:
+        - users
+      summary: Завершить сеанс пользователя.
+      description: Завершает сеанс работы - выход из закрытой части приложения.
+
+      responses:
+        "204":
+          description: Сеанс завершен.
 
 components:
   schemas:
